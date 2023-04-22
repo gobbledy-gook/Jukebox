@@ -20,7 +20,13 @@
                     <form action = "http://127.0.0.1:5000/fetch" method = "POST">
                         <div class = "py-2"><p>Title</p><input class = "text-gray-900 px-2 py-1 rounded bg-gray-200" type = "text" name = "title" /></div>
                         <div class = "py-2"><p>Artist</p><input class = "text-gray-900 px-2 py-1 rounded bg-gray-200" type = "text" name = "artist" /></div>
-                        <div class = "py-2"><p>Genre</p><input class = "text-gray-900 px-2 py-1 rounded bg-gray-200" type = "text" name = "genre" /></div>
+                        <div class = "py-2"><p>Genre</p>
+                            <select name="subject" id="subject">
+                                {% for g in genre}
+                                <option value={g[0]} selected="selected"></option>
+                                <option value={g[1]} selected="selected"></option>
+                                {% endfor %}
+                              </select></div>
                         <div class = "py-2"><p>Album</p><input class = "text-gray-900 px-2 py-1 rounded bg-gray-200" type = "text" name = "album" /></div>
                         <!-- This Button is for the advanced search feature -->
                         <button id = "fetch" class = "bg-green-500 text-gray-800 px-4 py-2 mt-2 rounded-sm" type = "submit">Search</button> 
