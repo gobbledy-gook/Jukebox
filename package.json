@@ -1,0 +1,13 @@
+{
+  "name": "jukebox",
+  "version": "1.0.0",
+  "description": "This project allows you to figure out your song from the incomplete info you have about the song.",
+  "main": "tailwind.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "npx tailwindcss -i src/style/index.css -o src/style/index.css --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
