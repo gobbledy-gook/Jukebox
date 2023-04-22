@@ -30,7 +30,7 @@ def selectView(*kargs):
     for attr in table1:
         print(attr)
     pass
-    return render_template("index.html")
+    return render_template("index.html", table1 = table1)
 
 
 @app.route('/fetch', methods=['POST', 'GET'])
