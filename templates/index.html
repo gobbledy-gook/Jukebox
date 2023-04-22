@@ -5,43 +5,79 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="src/style/index.css" rel="stylesheet">
     <title>Document</title>
-    <style>
-        .result {
-            display: hidden;
-        }
-    </style>
+    <link href="../src/style/index.css" rel="stylesheet">
 </head>
-
-<body>
-    <h1>Juke Box</h1>
-    <!-- <form action = "http://127.0.0.1:5000/fetch" method = "POST">
-        <p>Name <input type = "text" name = "Name" /></p>
-        <p>Physics <input type = "text" name = "Physics" /></p>
-        <p>Chemistry <input type = "text" name = "chemistry" /></p>
-        <p>Maths <input type ="text" name = "Mathematics" /></p>
-        <p><input type = "submit" value = "submit" /></p>
-    </form> -->
-    <form action="http://127.0.0.1:5000/view" method="POST">
-        <button id="submit" type="submit" value="submit"> SHOW Tables</button>
-    </form>
-    <table class="result">
-        <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Age</th>
-        </tr>
-        {% for rows in table1 %}
-        <tr>
-            <td>{{rows[0]}}</td>
-            <td>{{rows[0]}}</td>
-            <td>{{rows[0]}}</td>
-        </tr>
-        {% endfor %}
-    </table>
-
-    <script src="src/scripts/data.js"></script>
+<body class = " bg-gray-900 text-gray-300">
+    <div class = "flex flex-col">
+        <div class = "head border-gray-400 border-b-2 w-full">
+            <h1 class = "py-5 text-center text-4xl font-serif">Juke Box</h1>
+        </div>
+        <div class = "body flex flex-row">
+            <!-- Here begins LEFT side - the advanced search part of the page -->
+            <div class = "Advanced_Search bg-gray-900 px-5 py-5 w-1/4 fixed">
+                <div class = "flex flex-row">
+                    <form action = "http://127.0.0.1:5000/fetch" method = "POST">
+                        <div class = "py-2"><p>Title</p><input class = "text-gray-900 px-2 py-1 rounded bg-gray-200" type = "text" name = "Name" /></div>
+                        <div class = "flex flex-col">
+                            <div class = "py-2"><p>Title</p><input class = "text-gray-900 px-2 py-1 rounded bg-gray-200" type = "text" name = "Name" /></div>
+                            <div class = "py-2"><p>Title</p><input class = "text-gray-900 px-2 py-1 rounded bg-gray-200" type = "text" name = "Name" /></div>
+                            <div class = "py-2"><p>Title</p><input class = "text-gray-900 px-2 py-1 rounded bg-gray-200" type = "text" name = "Name" /></div>
+                        </div>
+                        <!-- This Button is for the advanced search feature -->
+                        <button id = "fetch" type = "submit">Search</button> 
+                     </form>
+                </div>
+            </div>
+            <div class = "SongsList w-3/4 bg-gray-800 ml-auto overflow-y-auto">
+                <!-- here is the RIGHT side of viewing albums and songs part of the page -->
+                <div class = "w-full text-center py-5 text-3xl">
+                    TOP 10 SONGS
+                    <p class = "text-center text-sm">For you From us</span>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 mx-4 my-2 px-8 pb-12">
+                    <div data-aos="fade-right" class = "mb-20">
+                        <img src="../src/assets/Moonlight.png" class="w-full h-full">
+                        <p class = "song_title text-center py-3">Light Switch - Charlie Puth</p>
+                    </div>
+                    <div data-aos="fade-right" class = "mb-20">
+                        <img src="../src/assets/Moonlight.png" class="w-full h-full">
+                        <p class = "song_title text-center py-3">Light Switch - Charlie Puth</p>
+                    </div>
+                    <div data-aos="fade-right" class = "mb-20">
+                        <img src="../src/assets/Moonlight.png" class="w-full h-full">
+                        <p class = "song_title text-center py-3">Light Switch - Charlie Puth</p>
+                    </div>
+                    <div data-aos="fade-right" class = "mb-20">
+                        <img src="../src/assets/Moonlight.png" class="w-full h-full">
+                        <p class = "song_title text-center py-3">Light Switch - Charlie Puth</p>
+                    </div>
+                    <div data-aos="fade-right" class = "mb-20">
+                        <img src="../src/assets/Moonlight.png" class="w-full h-full">
+                        <p class = "song_title text-center py-3">Light Switch - Charlie Puth</p>
+                    </div>
+                    <div data-aos="fade-right" class = "mb-20">
+                        <img src="../src/assets/Moonlight.png" class="w-full h-full">
+                        <p class = "song_title text-center py-3">Light Switch - Charlie Puth</p>
+                    </div>
+                    <div data-aos="fade-right" class = "mb-20">
+                        <img src="../src/assets/Moonlight.png" class="w-full h-full">
+                        <p class = "song_title text-center py-3">Light Switch - Charlie Puth</p>
+                    </div>
+                    <div data-aos="fade-right" class = "mb-20">
+                        <img src="../src/assets/Moonlight.png" class="w-full h-full">
+                        <p class = "song_title text-center py-3">Light Switch - Charlie Puth</p>
+                    </div>
+                    <div data-aos="fade-right" class = "mb-20">
+                        <img src="../src/assets/Moonlight.png" class="w-full h-full">
+                        <p class = "song_title text-center py-3">Light Switch - Charlie Puth</p>
+                    </div>
+                </div>    
+            </div>
+            <div class = "Top_Songs"></div>
+        </div>
+    </div>
+    <!-- <script src = "src/scripts/data.js"></script> -->
 </body>
 
 </html>
