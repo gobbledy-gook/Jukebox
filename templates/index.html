@@ -17,14 +17,12 @@
             <div class = "Advanced_Search bg-gray-900 px-5 py-5 w-1/4 fixed">
                 <div class = "flex flex-row">
                     <form action = "http://127.0.0.1:5000/fetch" method = "POST">
-                        <div class = "py-2"><p>Title</p><input class = "text-gray-900 px-2 py-1 rounded bg-gray-200" type = "text" name = "Name" /></div>
-                        <div class = "flex flex-col">
-                            <div class = "py-2"><p>Title</p><input class = "text-gray-900 px-2 py-1 rounded bg-gray-200" type = "text" name = "Name" /></div>
-                            <div class = "py-2"><p>Title</p><input class = "text-gray-900 px-2 py-1 rounded bg-gray-200" type = "text" name = "Name" /></div>
-                            <div class = "py-2"><p>Title</p><input class = "text-gray-900 px-2 py-1 rounded bg-gray-200" type = "text" name = "Name" /></div>
-                        </div>
+                        <div class = "py-2"><p>Title</p><input class = "text-gray-900 px-2 py-1 rounded bg-gray-200" type = "text" name = "title" /></div>
+                        <div class = "py-2"><p>Artist</p><input class = "text-gray-900 px-2 py-1 rounded bg-gray-200" type = "text" name = "artist" /></div>
+                        <div class = "py-2"><p>Genre</p><input class = "text-gray-900 px-2 py-1 rounded bg-gray-200" type = "text" name = "genre" /></div>
+                        <div class = "py-2"><p>Album</p><input class = "text-gray-900 px-2 py-1 rounded bg-gray-200" type = "text" name = "album" /></div>
                         <!-- This Button is for the advanced search feature -->
-                        <button id = "fetch" type = "submit">Search</button> 
+                        <button id = "fetch" class = "bg-green-500 text-gray-800 px-4 py-2 mt-2 rounded-sm" type = "submit">Search</button> 
                      </form>
                 </div>
             </div>
