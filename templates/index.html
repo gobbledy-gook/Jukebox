@@ -8,35 +8,38 @@
     <title>Document</title>
     <link href="static/styles/index.css" rel="stylesheet">
 </head>
+<header class = "fixed w-full z-10 bg-gray-900">
+    <div class = "head border-gray-400 border-b-2 w-full">
+        <h1 class = "py-5 text-center text-4xl font-serif">Juke Box</h1>
+    </div>
+</header>
 <body class = " bg-gray-900 text-gray-300">
-    <div class = "flex flex-col">
-        <div class = "head border-gray-400 border-b-2 w-full">
-            <h1 class = "py-5 text-center text-4xl font-serif">Juke Box</h1>
-        </div>
+    <!-- <div class = "head border-gray-400 border-b-2 w-full">
+        <h1 class = "py-5 text-center text-4xl font-serif">Juke Box</h1>
+    </div> -->
         <div class = "body flex flex-row">
             <!-- Here begins LEFT side - the advanced search part of the page -->
-            <div class = "Advanced_Search bg-gray-900 px-5 py-5 w-1/4 fixed">
+            <div class = "Advanced_Search bg-gray-900 px-5 py-5 w-1/4 mt-20 fixed z-0">
                 <div class = "flex flex-row">
                     <form action = "http://127.0.0.1:5000/fetch" method = "POST">
                         <div class = "py-2"><p>Title</p><input class = "text-gray-900 px-2 py-1 rounded bg-gray-200" type = "text" name = "title" /></div>
                         <div class = "py-2"><p>Artist</p><input class = "text-gray-900 px-2 py-1 rounded bg-gray-200" type = "text" name = "artist" /></div>
                         <div class = "py-2"><p>Genre</p>
-                            <select name="subject" id="subject">
-                                {% for g in genre %}
-                                <option value="" selected="selected">{{g[0]}}</option>
-                                <option value="" selected="selected">{{g[1]}}</option>
-                                {% endfor %}
+                            <select name="genre" id="genre">
+                                <option value="A">POP</option>
+                                <option value="B">BOLLYWOOD</option>
                               </select></div>
-                        <div class = "py-2"><p>Album</p><input class = "text-gray-900 px-2 py-1 rounded bg-gray-200" type = "text" name = "album" /></div>
+                              <div class = "py-2"><p>Album</p>
+                                <select class ="" name="album" id="album">
+                                    <option value="A">WORKOUT</option>
+                                    <option value="B">WORKOUT - 2</option>
+                                  </select></div>
                         <!-- This Button is for the advanced search feature -->
                         <button id = "fetch" class = "bg-green-500 text-gray-800 px-4 py-2 mt-2 rounded-sm" type = "submit">Search</button> 
                      </form>
-                    <div>
-                        <a href="user.html">Your Profile</a>
-                    </div>
                 </div>
             </div>
-            <div class = "SongsList w-3/4 bg-gray-800 ml-auto overflow-y-auto">
+            <div class = "SongsList w-3/4 bg-gray-800 ml-auto overflow-y-auto mt-20">
                 <!-- here is the RIGHT side of viewing albums and songs part of the page -->
                 <div class = "w-full text-center py-5 text-3xl">
                     TOP 10 SONGS
@@ -83,7 +86,6 @@
             </div>
             <div class = "Top_Songs"></div>
         </div>
-    </div>
     <!-- <script src = "src/scripts/data.js"></script> -->
 </body>
 
