@@ -10,8 +10,8 @@ pwd = os.environ.get('PASSWORD')
 # create connection object
 con = mysql.connector.connect(
     host="localhost", user="root",
-    password="02f@b2004",
-     database = "svnit", auth_plugin = 'mysql_native_password')
+    password=pwd,
+     database = "Jukebox", auth_plugin = 'mysql_native_password')
 
 # Cursor Object Created
 cur_object = con.cursor()
