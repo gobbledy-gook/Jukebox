@@ -5,9 +5,12 @@
   "main": "tailwind.config.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "watch": "npx tailwindcss -i src/style/index.css -o src/style/index.css --watch"
+    "watch": "npx tailwindcss -i ./style.css -o ./src/style/index.css --watch"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "tailwindcss": "^3.3.1"
+  }
 }
