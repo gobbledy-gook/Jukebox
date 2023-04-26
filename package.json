@@ -5,7 +5,11 @@
   "main": "tailwind.config.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+<<<<<<< HEAD
     "watch": "npx tailwindcss -i ./style.css -o ./static/styles/index.css --watch"
+=======
+    "watch": "npx tailwindcss -i ./style.css -o static/styles/index.css --watch"
+>>>>>>> aef81fab288d5703df79f0010100ab2561805037
   },
   "keywords": [],
   "author": "",
