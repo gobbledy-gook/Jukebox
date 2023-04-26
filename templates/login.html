@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../static/styles/index.css" rel="stylesheet">
+    <title>JukeBox - Login</title>
+</head>
+<body>
+    <div class="bg-gray-900 text-gray-300 h-screen">
+        <div class = "head border-gray-400 border-b-2 w-full">
+            <h1 class = "py-5 text-center text-4xl font-serif">Juke Box</h1>
+        </div>
+        <div class = "flex flex-col my-10 mx-40 px-10 py-5 bg-slate-200 rounded-sm justify-center">
+            <form action = "http://127.0.0.1:5000/home" method="POST">
+                <div>
+                    <p class = "text-gray-800">User ID</p>
+                    <input class = "px-2 py-1 rounded-sm my-3" type = "text" name = "userid">
+                </div>
+                    <button class = "bg-green-400 px-4 py-2 text-gray-800 hover:bg-green-950 hover:text-gray-100" type = "submit">Log In</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
