@@ -21,6 +21,10 @@ cur_object = con.cursor()
 def jukebox():
     return render_template("index.html")
 
+@app.route("/user.html")
+def jukebox1():
+    return render_template("user.html")
+
 @app.route("/view", methods = ["POST"])
 def selectView(*kargs):
     query1 = "show tables;"

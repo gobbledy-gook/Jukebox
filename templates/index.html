@@ -16,24 +16,27 @@
         <div class = "body flex flex-row">
             <!-- Here begins LEFT side - the advanced search part of the page -->
             <div class = "Advanced_Search bg-gray-900 px-5 py-5 w-1/4 fixed">
-                <div class = "flex flex-row">
-                    <form action = "http://127.0.0.1:5000/fetch" method = "POST">
-                        <div class = "py-2"><p>Title</p><input class = "text-gray-900 px-2 py-1 rounded bg-gray-200" type = "text" name = "title" /></div>
-                        <div class = "py-2"><p>Artist</p><input class = "text-gray-900 px-2 py-1 rounded bg-gray-200" type = "text" name = "artist" /></div>
-                        <div class = "py-2"><p>Genre</p>
-                            <select name="subject" id="subject">
-                                {% for g in genre %}
-                                <option value="" selected="selected">{{g[0]}}</option>
-                                <option value="" selected="selected">{{g[1]}}</option>
-                                {% endfor %}
-                              </select></div>
-                        <div class = "py-2"><p>Album</p><input class = "text-gray-900 px-2 py-1 rounded bg-gray-200" type = "text" name = "album" /></div>
-                        <!-- This Button is for the advanced search feature -->
-                        <button id = "fetch" class = "bg-green-500 text-gray-800 px-4 py-2 mt-2 rounded-sm" type = "submit">Search</button> 
-                     </form>
+                <div class="">
+
                     <div>
-                        <a href="user.html">Your Profile</a>
+                        <form action="http://127.0.0.1:5000/fetch" method="POST">
+                            <div class="py-2"><p>Title</p><input class="text-gray-900 px-2 py-1 rounded bg-gray-200" type="text" name="title" /></div>
+                            <div class="py-2"><p>Artist</p><input class="text-gray-900 px-2 py-1 rounded bg-gray-200" type="text" name="artist" /></div>
+                            <div class="py-2">
+                                <p>Genre</p>
+                                <select name="subject" id="subject">
+                                    {% for g in genre %}
+                                    <option value="" selected="selected">{{g[0]}}</option>
+                                    <option value="" selected="selected">{{g[1]}}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                            <div class="py-2"><p>Album</p><input class="text-gray-900 px-2 py-1 rounded bg-gray-200" type="text" name="album" /></div>
+                            <!-- This Button is for the advanced search feature -->
+                            <button id="fetch" class="bg-green-500 text-gray-800 px-4 py-2 mt-2 rounded-sm" type="submit">Search</button>
+                        </form>
                     </div>
+                    <div class="bg-cyan-500"><a href="user.html">Your Profile</a></div>
                 </div>
             </div>
             <div class = "SongsList w-3/4 bg-gray-800 ml-auto overflow-y-auto">
