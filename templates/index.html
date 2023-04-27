@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link href="static/styles/index.css" rel="stylesheet">
+    <link href="../static/styles/index.css" rel="stylesheet">
 </head>
 <header class = "fixed w-full z-10 bg-gray-900">
     <div class = "head border-gray-400 border-b-2 w-full">
@@ -19,15 +19,17 @@
     </div> -->
         <div class = "body flex flex-row">
             <!-- Here begins LEFT side - the advanced search part of the page -->
-            <div class = "Advanced_Search bg-gray-900 px-5 py-5 w-1/4 mt-20 fixed z-0">
-                <div class = "flex flex-row">
-                    <form action = "http://127.0.0.1:5000/fetch" method = "POST">
+            <div class = "Advanced_Search bg-gray-900 px-5 py-5 w-1/4 fixed">
+                <div class = "flex flex-row mb-96">
+                    <form action = "http://127.0.0.1:5000/home/fetch" method = "POST">
                         <div class = "py-2"><p>Title</p><input class = "text-gray-900 px-2 py-1 rounded bg-gray-200" type = "text" name = "title" /></div>
-                        <div class = "py-2"><p>Artist</p><input class = "text-gray-900 px-2 py-1 rounded bg-gray-200" type = "text" name = "artist" /></div>
+                        <!-- <div class = "py-2"><p>Artist</p><input class = "text-gray-900 px-2 py-1 rounded bg-gray-200" type = "text" name = "artist" /></div> -->
                         <div class = "py-2"><p>Genre</p>
-                            <select name="genre" id="genre">
-                                <option value="A">POP</option>
-                                <option value="B">BOLLYWOOD</option>
+                            <select class = "text-gray-800 px-4 py-2" name="genre" id="subject">
+                                <option value="" selected="selected">All</option>
+                                {% for g in data[1] %}
+                                <option value="{{g[0]}}" selected="selected">{{g[0]}}</option>
+                                {% endfor %}
                               </select></div>
                               <div class = "py-2"><p>Album</p>
                                 <select class ="" name="album" id="album">
@@ -35,8 +37,14 @@
                                     <option value="B">WORKOUT - 2</option>
                                   </select></div>
                         <!-- This Button is for the advanced search feature -->
-                        <button id = "fetch" class = "bg-green-500 text-gray-800 hover:bg-white hover:text-green-950 px-4 py-2 mt-2 rounded-sm" type = "submit">Search</button> 
+                        <button id = "fetch" class = "bg-green-500 text-gray-800 hover:bg-transparent hover:border-2 hover:border-green-500 hover:text-white px-4 py-2 mt-2 rounded-sm" type = "submit" name = "Searched" value = "1">Search</button> 
                      </form>
+                </div>
+                <div class = "mt-5 mr-10">
+                    <form action = "http://127.0.0.1:5000/user" method = "POST">
+                        <input type = "text" value = "{{data[0]}}" hidden>
+                        <button name = "userid" value = "{{data[0]}}" class = "px-4 py-2 w-full bg-yellow-400 rounded-sm text-gray-800" title = "{{data[0]}}">USER</button>
+                    </form>
                 </div>
                 <div class = "flex flex-col mt-80">
                     <button class = "bg-yellow-500 text-gray-900 px-4 py-2 justify-start hover:bg-yellow-50 hover:text-yellow-900">User</button>
@@ -45,47 +53,23 @@
             <div class = "SongsList w-3/4 bg-gray-800 ml-auto overflow-y-auto mt-20">
                 <!-- here is the RIGHT side of viewing albums and songs part of the page -->
                 <div class = "w-full text-center py-5 text-3xl">
-                    TOP 10 SONGS
+                    TOP SONGS
                     <p class = "text-center text-sm">For you From us</span>
                 </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 mx-4 my-2 px-8 pb-12">
-                    <div data-aos="fade-right" class = "mb-20">
-                        <img src="static/assets/Moonlight.png" class="w-full h-full">
-                        <p class = "song_title text-center py-3">Light Switch - Charlie Puth</p>
-                    </div>
-                    <div data-aos="fade-right" class = "mb-20">
-                        <img src="static/assets/Moonlight.png" class="w-full h-full">
-                        <p class = "song_title text-center py-3">Light Switch - Charlie Puth</p>
-                    </div>
-                    <div data-aos="fade-right" class = "mb-20">
-                        <img src="static/assets/Moonlight.png" class="w-full h-full">
-                        <p class = "song_title text-center py-3">Light Switch - Charlie Puth</p>
-                    </div>
-                    <div data-aos="fade-right" class = "mb-20">
-                        <img src="static/assets/Moonlight.png" class="w-full h-full">
-                        <p class = "song_title text-center py-3">Light Switch - Charlie Puth</p>
-                    </div>
-                    <div data-aos="fade-right" class = "mb-20">
-                        <img src="static/assets/Moonlight.png" class="w-full h-full">
-                        <p class = "song_title text-center py-3">Light Switch - Charlie Puth</p>
-                    </div>
-                    <div data-aos="fade-right" class = "mb-20">
-                        <img src="static/assets/Moonlight.png" class="w-full h-full">
-                        <p class = "song_title text-center py-3">Light Switch - Charlie Puth</p>
-                    </div>
-                    <div data-aos="fade-right" class = "mb-20">
-                        <img src="static/assets/Moonlight.png" class="w-full h-full">
-                        <p class = "song_title text-center py-3">Light Switch - Charlie Puth</p>
-                    </div>
-                    <div data-aos="fade-right" class = "mb-20">
-                        <img src="static/assets/Moonlight.png" class="w-full h-full">
-                        <p class = "song_title text-center py-3">Light Switch - Charlie Puth</p>
-                    </div>
-                    <div data-aos="fade-right" class = "mb-20">
-                        <img src="static/assets/Moonlight.png" class="w-full h-full">
-                        <p class = "song_title text-center py-3">Light Switch - Charlie Puth</p>
-                    </div>
-                </div>    
+                <form action = "http://127.0.0.1:5000/home/fetch" method = "POST" class = "w-full">
+                <div class="grid grid-cols-4 md:grid-cols-2 lg:grid-cols-4 gap-5 mx-4 my-2 px-8 pb-12">
+                        {% for name in data[2] %}
+                        <div data-aos="fade-right" class = "mb-20">
+                            <img src="../static/assets/Moonlight.png" class="w-full h-full">
+                            <div class = "flex flex-row w-full">
+                                <div class = "song_title py-3 w-5/6 text-left">{{name[1]}}</div>
+                                <input name = "title" type = "text" class = "hidden" value = "{{name[1]}}">
+                                <div class = "h-full my-3 justify-end"><button name = "Selected" value = "{{name[1]}}" class = "likeButton bg-red-200 hover:bg-red-500 rounded-lg px-2 py-2"></button></div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>    
+                    </form>
             </div>
             <div class = "Top_Songs"></div>
         </div>
