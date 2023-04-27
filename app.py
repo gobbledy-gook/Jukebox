@@ -69,6 +69,7 @@ def fetch():
         cur_object.execute(q1)
         song_id = cur_object.fetchall()[0][0]
         q2 = "INSERT INTO playlist_contains values('" + userid + "', 1, '" + song_id + "');"
+        q3 = "INSERT INTO listens_to values('" + userid + "', 1, '" + song_id + "', 1, 1);"
         try:
             cur_object.execute(q2)  
             con.commit()
