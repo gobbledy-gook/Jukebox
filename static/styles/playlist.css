@@ -1,0 +1,9 @@
+.playlist_enlarge{
+    height:30rem;
+    
+}
+
+.songlist_enlarge {
+    height: 20rem;
+    overflow: scroll;
+}

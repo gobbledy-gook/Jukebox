@@ -28,8 +28,11 @@ def login():
 @app.route("/home", methods = ["POST", "GET"])
 def jukebox():
     global userid, genreList
-    user = request.form
-    userid = dict(user)["userid"]
+    try:
+        user = request.form
+        userid = dict(user)["userid"]
+    except:    
+        pass
     q1 = "SELECT distinct genre from Song;"
     cur_object.execute(q1)
     genreList = cur_object.fetchall()
@@ -97,8 +100,27 @@ def fetch():
 #     #     print("SQL ERROR !")    
 #     return render_template("index.html", data = [userid, genreList, songdata])
 
-# @app.route('/songsearch', methods = ['POST', 'GET'])
-# def songSearch():
+@app.route('/user', methods = ['POST', 'GET'])
+def user():
+    global userid, likedsongs
+    result = request.form
+    dictresult = dict(result)
+    print(dictresult)
+    try:
+        if(dictresult['userid'] == userid):
+            q1 = "Select song.title, song.song_id from song, playlist_contains as pc, users as u where song.song_id = pc.song_id and pc.user_id = u.user_id and pc.Playlist_Index = 1;"
+            cur_object.execute(q1)
+            ls = cur_object.fetchall()
+            return render_template("user.html", likedsongs = ls)
+    except:
+        disliked = dictresult['Disliked']
+        q1 = "delete from playlist_contains where song_id = '" + disliked+ "' and user_id = '" + userid+ "' and playlist_index = 1;"
+        cur_object.execute(q1)
+        con.commit()
+        q2 = q1 = "Select song.title, song.song_id from song, playlist_contains as pc, users as u where song.song_id = pc.song_id and pc.user_id = u.user_id and pc.Playlist_Index = 1;"
+        cur_object.execute(q2)
+        ls = cur_object.fetchall()
+        return render_template("user.html", likedsongs = ls)    
 
 
 

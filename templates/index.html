@@ -33,7 +33,10 @@
                      </form>
                 </div>
                 <div class = "mt-5 mr-10">
-                    <button class = "px-4 py-2 w-full bg-yellow-400 rounded-sm text-gray-800" title = "{{data[0]}}">USER</button>
+                    <form action = "http://127.0.0.1:5000/user" method = "POST">
+                        <input type = "text" value = "{{data[0]}}" hidden>
+                        <button name = "userid" value = "{{data[0]}}" class = "px-4 py-2 w-full bg-yellow-400 rounded-sm text-gray-800" title = "{{data[0]}}">USER</button>
+                    </form>
                 </div>
             </div>
             <div class = "SongsList w-3/4 bg-gray-800 ml-auto overflow-y-auto">
